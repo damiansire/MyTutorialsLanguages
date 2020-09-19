@@ -1,0 +1,18 @@
+<html>
+  <head>
+  </head>
+  <body>
+        
+  <p id="hola"> Vacio </p>
+
+  <script>
+      usuario1 = { "name":"Damian", "Edad":22, "Pais":"Uruguay" };
+      usuarioJson = JSON.stringify(usuario1);
+      console.log(usuarioJson)
+      document.getElementById("hola").innerHTML = usuarioJson
+      console.log(JSON.parse(usuarioJson))
+  </script>
+
+
+  </body>
+</html>

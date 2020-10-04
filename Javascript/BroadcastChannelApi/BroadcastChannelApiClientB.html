@@ -1,0 +1,34 @@
+<div id="number"></div>
+
+<style>
+    #xd {
+        visibility: hidden;
+    }
+    
+    #number {
+        font-size: 50px;
+        color: #434343;
+    }
+</style>
+<button id="xd" onclick="saveMe()"> click meeeee fastttttt</button>
+
+<script>
+    var n = 0;
+    var l = document.getElementById("number");
+    var intervalContent;
+
+
+    const channel = new BroadcastChannel("my-channel");
+    channel.addEventListener("message", e => {
+        intervalContent = window.setInterval(function() {
+            l.innerHTML = n;
+            n++;
+        }, 100);
+        document.getElementById("xd").style.visibility = "visible";
+    })
+
+    function saveMe() {
+        document.getElementById("xd").style.visibility = "hidden";
+        clearInterval(intervalContent)
+    }
+</script>

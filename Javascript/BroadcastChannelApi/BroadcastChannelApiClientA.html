@@ -1,0 +1,11 @@
+<input id="message">
+<button onclick="SendMessageToOtherTabs()">Send message</button>
+<script>
+    const channel = new BroadcastChannel("my-channel");
+
+    function SendMessageToOtherTabs() {
+        let message = document.getElementById("message").value;
+        channel.postMessage(message);
+
+    }
+</script>

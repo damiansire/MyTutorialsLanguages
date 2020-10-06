@@ -9,10 +9,25 @@
 <body>
     <h1>Hola mundo</h1>
     <script>
-        var nombre = "Damian"
-        console.log("Hola mundo")
-        alert("Soy una alerta")
-        alert("Hola, soy una alerta")
+        /*
+                    function saludar(nombre) {
+                        console.log(nombre);
+                        alert(nombre)
+                    }
+                    saludar("Damian")
+                    saludar("Sofia")
+                    saludar("Alberto")
+                    //Si no le damos valor a un parametro, por defecto se asume que es undefined
+                    saludar()
+                */
+
+        function saludar(nombre, apellido) {
+            console.log(nombre + apellido);
+            alert(nombre + apellido)
+        }
+        saludar("Damian", " Sire")
+        saludar("Sofia", " Perez")
+        saludar("Alberto", " Olivera")
     </script>
 </body>
 

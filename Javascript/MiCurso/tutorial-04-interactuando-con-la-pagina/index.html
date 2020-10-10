@@ -12,14 +12,17 @@
     <button onclick=' saludar("Damian", " Sire")  '>   Saludar a Damian </button>
     <button onclick=' saludar("Sofia", "Perez")  '>   Saludar a Sofia </button>
     <button onclick=' saludar("Alberto", "Olivera")  '>   Saludar a Alberto </button>
+
+    <div id="esteDivSeLlamaPedro">Hola, aca voy a saludar al usuario</div>
+
+
     <script>
         function saludar(nombre, apellido) {
             console.log("Hola " + nombre + " " + apellido);
-            alert("Hola " + nombre + " " + apellido)
+            //Poner en el div el contenido Hola + Nombre + Apellido
+            var divSaludar = document.getElementById("esteDivSeLlamaPedro");
+            divSaludar.innerText = "Hola " + nombre + " " + apellido;
         }
-        //
-        // saludar("Sofia", " Perez")
-        //saludar("Alberto", " Olivera")
     </script>
 </body>
 

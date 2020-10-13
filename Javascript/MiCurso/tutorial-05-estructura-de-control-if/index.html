@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Mi pagina de pruebas</title>
+</head>
+
+<body>
+    <h1>Hola mundo</h1>
+
+    <button onclick=' saludar("Damian", " Sire")  '>   Saludar a Damian </button>
+    <button onclick=' saludar("Sofia", "Perez")  '>   Saludar a Sofia </button>
+    <button onclick=' saludar("Alberto", "Olivera")  '>   Saludar a Alberto </button>
+
+    <div style="margin: 20px;;" id="esteDivSeLlamaPedro">Hola, aca voy a saludar al usuario</div>
+
+
+    <script>
+        //Si son entre las 7 de la mañana y las 13 deci "Buenos dias"
+        //Si estamos entre las 13 y las 19 deci "Buenas tardes" 
+        //Si estamos entre las 19 y las 8, decis "buenas noches"
+        function saludar(nombre, apellido) {
+            var fechaYHoraActual = new Date();
+            var horaActual = fechaYHoraActual.getHours();
+
+            var firstPartMessage = "";
+
+            if (horaActual > 7 && horaActual <= 13) {
+                firstPartMessage = "Buenos dias,"
+            }
+
+            if (horaActual > 13 && horaActual <= 19) {
+                firstPartMessage = "Buenas tardes,"
+            }
+
+            if (horaActual > 19 && horaActual <= 7) {
+                firstPartMessage = "Buenas noches,"
+            }
+
+            console.log(firstPartMessage + " " + nombre + " " + apellido);
+            //Poner en el div el contenido Hola + Nombre + Apellido
+            var divSaludar = document.getElementById("esteDivSeLlamaPedro");
+            divSaludar.innerText = firstPartMessage + " " + nombre + " " + apellido;
+        }
+    </script>
+</body>
+
+</html>

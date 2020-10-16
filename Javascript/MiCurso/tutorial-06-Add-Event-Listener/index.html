@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Probando el add event listener</title>
+</head>
+
+<body>
+
+    <button id="miBoton"> Iniciar</button>
+
+    <input id="miInput">
+
+    <script>
+        let miBoton = document.getElementById("miBoton");
+
+        /* caso onclick
+        miBoton.onclick = saludar;
+        miBoton.onclick = despedir;
+    */
+
+        miBoton.addEventListener("click", saludar);
+        miBoton.addEventListener("click", despedir);
+
+        function saludar() {
+            alert("Hola, como estas?");
+        }
+
+        function despedir() {
+            alert("Me tengo que ir, bye bye");
+        }
+
+        let miInput = document.getElementById("miInput");
+
+        miInput.addEventListener("input", function(event) {
+            alert("No pares, sigue sigue");
+        });
+    </script>
+
+</body>
+
+</html>

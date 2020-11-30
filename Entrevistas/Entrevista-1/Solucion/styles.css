@@ -1,0 +1,12 @@
+.upper-text {
+    text-transform: uppercase;
+}
+
+.capi-text {
+    text-transform: capitalize;
+}
+
+body {
+    background-color: black;
+    color: white;
+}

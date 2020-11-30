@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Is Anagrama</title>
+</head>
+
+<body>
+    <p>Implemente una funcion isAnagram, tal que dada dos palabras, devuelva true si y solo si, son un Anagrama </p>
+
+    <p>Ejemplo de Anagrama:</p>
+    <ul>
+        <li>
+            Tom Sorvolo Ryddle / Soy Lord Voldemort
+        </li>
+        <li>
+            conservación / conversación
+        </li>
+        <li>
+            amor / roma
+        </li>
+        <li>
+            enfriamiento / refinamiento
+        </li>
+    </ul>
+    <form id="anagramaForm">
+        <div>
+            <label for="word1">Inserte la palabra 1</label>
+            <input id="word1" name="word1">
+        </div>
+        <br>
+        <div>
+            <label for="word2"> Inserte la palabra 2</label>
+            <input id="word2" name="word2">
+        </div>
+        <button class="checkPalindrome">Chequear si son Anagrama</button>
+    </form>
+    <br>
+    <div class="isntAnagrama" style="display: none;">
+        No es un Anagrama
+    </div>
+    <div class="isAnagrama" style="display: none;">
+        Es un Anagrama
+    </div>
+    <script src="../Solucion/isAnagrama.js"></script>
+</body>
+
+</html>
+
+<style>
+    body {
+        background-color: darkgreen;
+        color: black;
+        font-size: 30px;
+        text-align: center;
+        align-items: center;
+    }
+    
+    ul {
+        list-style: none;
+    }
+    
+    input {
+        font-size: 25px;
+    }
+    
+    .checkPalindrome {
+        background-color: yellowgreen;
+        padding: 10px;
+        margin-top: 25px;
+        border: 5px solid darkslategray;
+        font-size: 20px;
+        cursor: pointer;
+    }
+    
+    li {
+        margin-bottom: 5px;
+    }
+</style>

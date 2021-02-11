@@ -1,65 +1,85 @@
-class Node {
-    constructor(data) {
-        this.data = data;
-        this.next = null;
-    }
-}
-
-class LinkedList {
-
-    constructor(head = null) {
-        this.head = head
-    }
-
-    getLastElement() {
-        let aux = this.head;
-        if (aux == null) {
-            return null;
-        }
-        while (aux.next != null) {
-            aux = aux.next;
-        }
-        return aux;
-    }
-
-    push(element) {
-        if (this.head == null) {
-            let nodeAux = new Node(element);
-            this.head = nodeAux;
-        } else {
-            let nodeAux = new Node(element);
-            let lastNode = this.getLastElement()
-            lastNode.next = nodeAux;
+    class Node {
+        constructor(data) {
+            this.data = data;
+            this.next = null;
         }
     }
 
-    printList() {
-        let aux = this.head;
-        while (aux != null) {
-            console.log(aux.data)
-            aux = aux.next
+    class List {
+        constructor() {
+            this.head = null;
+            this.length = 0;
+        }
+        push(data) {
+            let node = new Node(data)
+            if (this.head == null) {
+                this.head = node;
+            } else {
+                this.last.next = node;
+            }
+            this.last = node;
+            this.length++;
+        }
+        print() {
+            let aux = this.head
+            while (aux != null) {
+                console.log(aux.data)
+                aux = aux.next
+            }
+        }
+        length() {
+            let aux = this.head
+            let length = 0;
+            while (aux != null) {
+                this.length;
+                aux = aux.next
+            }
+            return aux;
+        }
+        getLastElement() {
+            let aux = this.head
+            while (aux != null && aux.next != null) {
+                aux = aux.next
+            }
+            return aux;
+        }
+        getElementByIndex(index) {
+            if (index < 0) { return null }
+            let aux = this.head;
+            let actualIndex = 0;
+            while (aux != null && actualIndex != index) {
+                aux = aux.next
+                actualIndex++;
+            }
+            return aux;
+        }
+        find(element) {
+            let aux = this.head;
+            while (aux != null && aux.data != element) {
+                aux = aux.next;
+            }
+            return aux
+        }
+        delete(element) {
+            let aux = this.head;
+            if (aux == null) { return null }
+            if (aux.data == element) { this.head = aux.next; return aux.data }
+            while (aux.next.data != element) {
+                aux = aux.next
+            }
+            aux.next = aux.next.next
+        }
+        deleteByNode(node) {
+            node.data = node.next.data
+            node.next = node.next.next;
         }
     }
 
-    length() {
-        let aux = this.head
-        let count = 0;
-        while (aux != null) {
-            count++;
-            aux = aux.next
-        }
-        return count;
-    }
-}
 
-
-let myList = new LinkedList()
-let arr = [1, 3, 5];
-let nodeAux = new Node(arr[0]);
-myList.head = nodeAux
-let lastNode = nodeAux;
-for (let index = 1; index < arr.length; index++) {
-    nodeAux = new Node(arr[index])
-    lastNode.next = nodeAux;
-    lastNode = nodeAux;
-}
+    let myList = new List();
+    myList.push(1)
+    myList.push(4)
+    myList.push(6)
+    myList.push(8)
+    myList.push(3)
+    myList.push(2)

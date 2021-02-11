@@ -5,20 +5,8 @@ let totalSumB = totalSum(B) // 12
 let dif = (totalSumA - totalSumB) / 2 // 4
 let solution = twoSubtractK(A, B, dif)
 
-/*
-Fuerza bruta solucion
-O(A*B)
-function twoSubtractK(arrA, arrB, k) {
-    for (let indexA = 0; indexA < arrA.length; indexA++) {
-        for (let indexB = 0; indexB < arrB.length; indexB++) {
-            if (arrA[indexA] - arrB[indexB] == k) {
-                return [arrA[indexA], arrB[indexB]]
-            }
-        }
-    }
-}
-*/
-// O(A) + O(B)
+
+// O(A) + O(B) with auxiliar space
 function twoSubtractK(arrA, arrB, k) {
     let aElement = {}
     for (let indexA = 0; indexA < arrA.length; indexA++) {
@@ -33,6 +21,19 @@ function twoSubtractK(arrA, arrB, k) {
     }
 }
 
+/*
+Fuerza bruta solucion
+O(A*B)
+function twoSubtractK(arrA, arrB, k) {
+    for (let indexA = 0; indexA < arrA.length; indexA++) {
+        for (let indexB = 0; indexB < arrB.length; indexB++) {
+            if (arrA[indexA] - arrB[indexB] == k) {
+                return [arrA[indexA], arrB[indexB]]
+            }
+        }
+    }
+}
+*/
 
 function totalSum(arr) {
     let totalSum = 0;
